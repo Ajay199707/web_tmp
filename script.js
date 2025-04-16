@@ -1,7 +1,6 @@
-const menuToggle  =document.getElementById('menuToggle')
+const menuToggle  =document.getElementById('navToggle')
 const navMenu =document.getElementById('navMenu')
 
 menuToggle.addEventListener('click', ()=>{
-    navMenu.style.display = navMenu.style.display === 'flex'? 'none': 'flex';
-
+    navMenu.classList.toggle('show');
 });
