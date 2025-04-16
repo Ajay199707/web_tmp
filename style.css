@@ -26,12 +26,20 @@ header.header{
     gap: 15px;
     flex-wrap: wrap;
 }
-
+.nav a:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
 .nav a{
     text-decoration: none;
     color: white;
     font-weight: bold;
     font-size: 16px;
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+
 }
 
 .nav-toggle {
@@ -40,33 +48,46 @@ header.header{
     background: none;
     border: none;
     cursor: pointer;
-    color: white; /* ✨ This makes it visible on dark background */
-    font-weight: bold; /* Optional: make it a bit bolder */
+    color: white; 
+    font-weight: bold; 
 }
 
-/* Page title styling */
+
 .page-title {
     font-size: 20px;
-    margin-left: 20px; /* Shift it a bit to the right */
-    white-space: nowrap; /* Prevents wrapping */
+    margin-left: 20px; 
+    white-space: nowrap; 
   }
   
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 .nav {
     flex-direction: column;
     background-color: black;
     position: fixed;
     top: 0;
     left: -100%;
-    height: 100%;
+    height: 100%;           
     width: 200px;
-    padding-top: 40px;
-    transition: left 0.3s ease-in-out;
+    padding-top: 43px;
+    /* padding-left: 20px; */
+    align-items: center;
+    transition: left 0.5s ease-in-out;
     z-index: 1000;
+    
 }
+
+.nav a{
+    color: aliceblue;
+    text-decoration: none;
+    padding: 10px 10px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
 
 .nav.show {
     left: 0;
@@ -74,8 +95,7 @@ header.header{
 
 .nav-toggle {
     display: block;
-    position: fixed; /* 👈 Change to fixed to lock it in viewport */
-    /* top: 15px; */
+    position: fixed; 
     right: 20px;
     z-index: 1100;
     color: white;
@@ -85,6 +105,11 @@ header.header{
     font-weight: bold;
     cursor: pointer;
 }
+.nav-toggle.glow{
+    /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); */
+    color: rgb(238, 238, 238);
+    text-shadow: 0 0 5px #dddddd;
+}
 
 .page-title {
     order: -1;
@@ -93,4 +118,3 @@ header.header{
 }
 }
   
-
