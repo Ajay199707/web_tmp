@@ -1,7 +1,12 @@
 body{
     padding-top: 60px;
     margin: 0;
+    height: 100%;
 }
+
+html, body {
+    height: 100%;
+  }
 
 
 .header{
@@ -165,38 +170,182 @@ header.header{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-
-
-.Outershell-slide{
-    align-items: center;
+.slide-container{
     background-color: rgb(255, 255, 255);
     margin-top: 40px;
     margin-left: 30px;
     margin-right: 30px;
-    /* height: 400px; */
-    /* width:90%; */
+    margin-bottom: 40px;
     /* border: 2px solid black; */
     border-radius: 20px;
     overflow: hidden;
-}
-
-.content-slide{
-    margin-right: 20px;
-    position: flex;
-    margin-left: 20px;
-    margin-top: 20px;
-    align-items: center;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 50px;
-
-}
-
-.shellheading-slide{
-    font-size: 30px;
-    align-items: center;
-    position: flex;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
     justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 10px 20px 10px 20px; /* Reduced padding (especially bottom) */
+    
 }
+
+.slide-heading{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    margin: 0px 75; /* Reduced space below heading */
+    margin-top: 10px;
+    /* padding: 20px; */
+}
+
+
+* {box-sizing:border-box}
+
+.mySlidess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Controls slide height */
+    margin: 0;
+    padding: 0;
+    min-height: auto;
+    /* border: 2px solid black; */
+
+  }
+
+
+.mySlidess img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 80vh; /* Limits height to 80% of the viewport */
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    /* padding-top: 10px; */
+    /* border: 2px solid red; */
+
+  }
+
+  .image-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    height: 40vh;         /* 🔧 Fixed height for consistency */
+    overflow: hidden;
+    display: flex;        /* ✅ This centers image vertically */
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid blue; */
+
+
+  }
+
+
+  
+  .image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    /* width: auto;
+    height: auto; */
+    object-fit: contain;  /* ✅ Prevent distortion */
+    display: block;
+    /* border: 2px solid rgb(63, 199, 63); */
+
+  }
+  
+  
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(238, 238, 238);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+cursor: pointer;
+height: 5px;
+width: 15px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.dot-container {
+    margin-top: 10px; /* Reduce space between image and dots */
+    margin-bottom: 5px;
+  }
+
+
+.active, .dot:hover {
+background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+
+
+
+
+
+
+.footer{
+    display: flex;
+    text-align: center;
+    font-weight: bold;
+    background-color: black;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 14px;
+
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+@media (max-width: 600px){
+.footer{
+    font-size: 1rem;
+}
+}
+
+
